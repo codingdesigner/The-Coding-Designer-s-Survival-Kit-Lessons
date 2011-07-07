@@ -10,6 +10,13 @@
 // $light_gray: mix($white, $black, 80%)
 // $very_light_gray: mix($white, $black, 95%)
 
+// @debug scale-color($black, $lightness: 10%)
+// @debug mix($black, $white, 90%)
+$gray-dark: scale-color($black, $lightness: 10%)
+$gray-light: scale-color($white, $lightness: -10%)
+$red: #B80000
+$red-dark: scale-color($red, $lightness: -20%)
+
 // COLOR SCHEMES
 // experimental math-generated color schemes
 // define a primary color to base these on
@@ -18,6 +25,6 @@ $primary: $white
 
 
 // Color variables expected by _defaults.sass ------------------
-$base-color: $black
-$alt-color: $hotpink
-$background-color: $white
+$base-color: $gray-dark
+$alt-color: $red-dark
+$background-color: $gray-light
