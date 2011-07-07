@@ -2,8 +2,21 @@
 /* LAYOUT --------------------------------------------------------------
 
 
+$kit-container-width: 960
+
 #page
-  @extend .container
+  // @extend .container
   // uncomment this line for fluid layout
-  // width: 95% 
-  
+  width: 95% 
+  // width: $target-width + px
+  margin: 0 auto
+  .content
+    width: target-width(628)
+    margin-right: target-width(24)
+    float: left
+  aside
+    width: target-width(308)
+    float: right
+  footer
+    clear: both
+    
