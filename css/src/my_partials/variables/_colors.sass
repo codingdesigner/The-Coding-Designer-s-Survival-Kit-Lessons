@@ -3,28 +3,15 @@
   "kit_partials/variables/_color.sass"
   You should leave that file active and add your own color-related variables here. 
   
-
-// PROJECT COLORS
-// define your own here
-// $dark_gray: mix($white, $black, 30%)
-// $light_gray: mix($white, $black, 80%)
-// $very_light_gray: mix($white, $black, 95%)
-
-// @debug scale-color($black, $lightness: 10%)
-// @debug mix($black, $white, 90%)
-$gray-dark: scale-color($black, $lightness: 10%)
-$gray-light: scale-color($white, $lightness: -10%)
-$red: #B80000
+$darkgray: scale-color($black, $lightness: 10%)
+$lightgray: scale-color($white, $lightness: -10%)
+$red: #b80000
 $red-dark: scale-color($red, $lightness: -20%)
 
-// COLOR SCHEMES
-// experimental math-generated color schemes
-// define a primary color to base these on
-$primary: $white
 
 
 
 // Color variables expected by _defaults.sass ------------------
-$base-color: $gray-dark
+$base-color: $darkgray
 $alt-color: $red-dark
-$background-color: $gray-light
+$background-color: $lightgray
