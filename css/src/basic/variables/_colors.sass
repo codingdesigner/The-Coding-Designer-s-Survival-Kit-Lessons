@@ -1,4 +1,9 @@
 // DEFAULT COLORS
+$darkgray: scale-color($black, $lightness: 10%)
+$lightgray: scale-color($white, $lightness: -10%)
+$red: #b80000
+$red-dark: scale-color($red, $lightness: -20%)
+$blue: #30829c
 
 // COLOR SCHEMES
 // experimental math-generated color schemes
@@ -6,6 +11,8 @@
 $primary: $white
 
 // Color variables expected by _defaults.sass ------------------
-$base-color: $black
-$alt-color: $hotpink
-$background-color: $white
+$base-color: $darkgray
+$alt-color: $red-dark
+$background-color: $lightgray
+
+
