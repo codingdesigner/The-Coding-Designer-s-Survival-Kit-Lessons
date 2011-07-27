@@ -9,32 +9,41 @@ h1
 .site-wide  
   h1
     color: $blue
-    +text-shadow($white -1px 1px 0px, rgba($black, 0.2) -2px 2px 2px)
     opacity: 0.3
     +adjust-font-size-to($ms3)
- 
-article header h1
-  font-size: $ms10
+    // +text-shadow($white -1px 1px 0px)
+    +text-shadow($white -1px 1px 0px, rgba($black, 0.2) -2px 2px 2px)
+
+nav
+  background-color: $white
+  +border-left-radius($ms1 ($ms1 * 2))
+  padding-left: $ms1 * 0.5
+  margin-left: -$ms1 * 0.5
+  +adjust-font-size-to($ms2)
+  +background-image(linear-gradient(left, $white, $lightgray 80%))
+  border-bottom: 1px dotted $white
+  ul
+    +horizontal-list(0.25em)
+    li
+      a
+        +better-links($alt-color, $blue, $blue, $alt-color, false)
+        font-family: $font-mono
+        text-transform: uppercase
+        padding: 0 0.25em
+        &:hover
+          border-width: 4px
+          
+article 
+  header 
+    h1
+      // font-size: $ms10
+      +adjust-font-size-to($ms10)
+      color: $blue
+  .content
+    p:first-of-type
+      +adjust-font-size-to($ms1)
  
  
 aside
   h1
     font-size: $ms2
-
-
-nav
-  background-color: $white
-  +border-left-radius($ms1 ($ms1 * 2))
-  padding-left: $ms1
-  margin-left: -$ms1
-  ul
-    +horizontal-list
-    li
-      a
-        +remove-link-underlines
-        @extend .sans
-        text-transform: uppercase
-        +adjust-font-size-to($ms3)
-        padding: 0 0.5em
-        // +text-shadow(rgba($black, 0.4), 0, 2px, 0px)
-        
