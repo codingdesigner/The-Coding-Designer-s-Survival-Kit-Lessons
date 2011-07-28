@@ -6,6 +6,14 @@ h1
   font-weight: bold
   font-family: $font-serifs
   font-style: italic
+
+.site-wide
+  h1
+    color: $blue
+    +adjust-font-size-to($ms3)
+    +text-shadow($white 1px 1px 0, rgba($black, 0.2) 2px 2px 2px)
+
+
   
 nav
   background-color: $white
@@ -26,8 +34,17 @@ nav
         border-width: 4px
     
 
-article header h1
-  font-size: $ms10
+article 
+  header 
+    +leader
+    h1
+      +adjust-font-size-to($ms10)
+      color: $blue
+  .content  
+    p:first-of-type
+      +adjust-font-size-to($ms1)
+      color: $blue-dark
+      
 
 
 aside

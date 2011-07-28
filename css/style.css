@@ -388,6 +388,13 @@ h1 {
   font-style: italic;
 }
 
+.site-wide h1 {
+  color: #30829c;
+  font-size: 1.975em;
+  line-height: 1.736em;
+  text-shadow: white 1px 1px 0, rgba(0, 0, 0, 0.2) 2px 2px 2px;
+}
+
 nav {
   background-color: white;
   border-bottom: 1px dotted white;
@@ -462,8 +469,18 @@ nav ul a:hover {
   border-width: 4px;
 }
 
+article header {
+  margin-top: 1.714em;
+}
 article header h1 {
-  font-size: 106.313px;
+  font-size: 7.594em;
+  line-height: 1.129em;
+  color: #30829c;
+}
+article .content p:first-of-type {
+  font-size: 1.317em;
+  line-height: 1.302em;
+  color: #0e272f;
 }
 
 aside h1 {
