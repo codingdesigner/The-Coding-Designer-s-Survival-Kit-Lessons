@@ -9,27 +9,27 @@ h1
 .site-wide  
   h1
     color: $blue
-    opacity: 0.3
+    opacity: 0.5
     +adjust-font-size-to($ms3)
-    // +text-shadow($white -1px 1px 0px)
-    +text-shadow($white -1px 1px 0px, rgba($black, 0.2) -2px 2px 2px)
+    +text-shadow($white -1px 1px 0px)
+    // +text-shadow($white -1px 1px 0px, rgba($black, 0.2) -2px 2px 2px)
 
 nav
   background-color: $white
-  +border-left-radius($ms1 ($ms1 * 2))
+  border-bottom: 1px dotted $white
   padding-left: $ms1 * 0.5
   margin-left: -$ms1 * 0.5
   +adjust-font-size-to($ms2)
+  +border-left-radius($ms1 ($ms1 * 2))
   +background-image(linear-gradient(left, $white, $lightgray 80%))
-  border-bottom: 1px dotted $white
   ul
     +horizontal-list(0.25em)
     li
       a
-        +better-links($alt-color, $blue, $blue, $alt-color, false)
         font-family: $font-mono
         text-transform: uppercase
         padding: 0 0.25em
+        +better-links($alt-color, $blue, $blue, $alt-color, false)
         &:hover
           border-width: 4px
           
