@@ -1,9 +1,21 @@
 // Set up the layout for your site using your chosen grid framework
 /* LAYOUT --------------------------------------------------------------
-
-
+ 
+$kit-container-width: 960
+  
 #page
-  @extend .container
+  // @extend .container
   // uncomment this line for fluid layout
-  // width: 95% 
+  width: 95% 
+  // width: $target-width + px
+  margin: 0 auto
+  .content
+    width: target-width(581)
+    margin-right: target-width(24)
+    float: left
+  aside
+    width: target-width(355)
+    float: right
+  footer
+    clear: both
   
