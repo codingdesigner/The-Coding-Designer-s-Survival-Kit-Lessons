@@ -39,25 +39,59 @@ aside
     
     
 article 
-  height: 200px
+  height: 220px
+  width: 90%
   position: relative
-  overflow: hidden
+  +perspective(800)
+  @for $i from 1 through 4
+    &:nth-of-type(#{$i}n+#{$i})
+      header
+        background-color: lighten($blue-dark, ($i * 3))
+    &:nth-of-type(#{$i}n+#{$i})
+      .body
+        background-color: darken($lightgray, ($i * 5))
+  header, .body
+    height: 100%
+    width: 100%
+    +backface-visibility
+    +transition-property(all)
+    +transition-duration(.4s)
+    +transition-timing-function(ease-in)
   header 
-    // +leader
+    background-color: $blue
     +transform3d( rotateX(0deg) )
     position: absolute
     h1
-      // +adjust-font-size-to($ms10)
+      +adjust-font-size-to($ms10)
       color: $blue
+      +text-shadow(rgba($black, 0.4) 1px 1px 0)
+      padding: 0 0.25em
   .body  
     position: absolute
-    +transform3d( rotateX(-180deg) )
-    height: 200px
+    +transform3d( rotateX(180deg) )
+    height: 100%
+    figure
+      float: left
+      margin: 0 24px 0 0 
+      overflow: hidden
+      height: 100%
     p:first-of-type
       // +adjust-font-size-to($ms1)
       color: $blue-dark
+    .text
+      +column-count(3)
+      +column-rule(1px, solid, $lightgray)
   &:hover
     header
       +transform3d( rotateX(-180deg) )
     .body
       +transform3d( rotateX(0deg) )
+      
+      
+      
+      
+      
+      
+      
+      
+      

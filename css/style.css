@@ -941,26 +941,91 @@ aside h1 {
 }
 
 article {
-  height: 200px;
+  height: 220px;
+  width: 90%;
   position: relative;
-  overflow: hidden;
+  -webkit-perspective: 800;
+  perspective: 800;
+}
+article:nth-of-type(1n+1) header {
+  background-color: #12313a;
+}
+article:nth-of-type(1n+1) .body {
+  background-color: #d9d9d9;
+}
+article:nth-of-type(2n+2) header {
+  background-color: #163a46;
+}
+article:nth-of-type(2n+2) .body {
+  background-color: #cccccc;
+}
+article:nth-of-type(3n+3) header {
+  background-color: #194452;
+}
+article:nth-of-type(3n+3) .body {
+  background-color: #bfbfbf;
+}
+article:nth-of-type(4n+4) header {
+  background-color: #1d4e5e;
+}
+article:nth-of-type(4n+4) .body {
+  background-color: #b3b3b3;
+}
+article header, article .body {
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
 }
 article header {
+  background-color: #30829c;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
   position: absolute;
 }
 article header h1 {
+  font-size: 7.594em;
+  line-height: 1.129em;
   color: #30829c;
+  text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 0;
+  padding: 0 0.25em;
 }
 article .body {
   position: absolute;
-  -webkit-transform: rotateX(-180deg);
-  transform: rotateX(-180deg);
-  height: 200px;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  height: 100%;
+}
+article .body figure {
+  float: left;
+  margin: 0 24px 0 0;
+  overflow: hidden;
+  height: 100%;
 }
 article .body p:first-of-type {
   color: #0e272f;
+}
+article .body .text {
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  -o-column-count: 3;
+  column-count: 3;
+  -moz-column-rule: 1px solid #e6e6e6;
+  -webkit-column-rule: 1px solid #e6e6e6;
+  -o-column-rule: 1px solid #e6e6e6;
+  column-rule: 1px solid #e6e6e6;
 }
 article:hover header {
   -webkit-transform: rotateX(-180deg);
