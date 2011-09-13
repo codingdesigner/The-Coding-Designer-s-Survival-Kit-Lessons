@@ -45,7 +45,7 @@ article
   position: relative
   background-color: $lightgray
   +perspective(800)
-  z-index: 1
+  z-index: 10
   @for $i from 1 through 4
     &:nth-of-type(#{$i}n+#{$i})
       header
@@ -63,8 +63,9 @@ article
     +transition-timing-function(ease-in)
   header 
     background-color: $blue
-    position: absolute
+    position: relative
     +transform3d( rotateX(0deg) )
+    z-index: 2
     h1
       +adjust-font-size-to($ms9)
       color: $blue
@@ -72,7 +73,9 @@ article
       padding: 0 0.25em
   .body  
     position: absolute
+    top: 0
     +transform3d( rotateX(180deg) )
+    z-index: 1
     figure
       float: left
       margin: 0 24px 0 0 
@@ -84,11 +87,12 @@ article
       +column-count(3)
       +column-rule(1px, solid, $lightgray)
   &:hover
-    z-index: 2
+    z-index: 20
     header
       +transform3d( rotateX(-180deg) )
     .body
       +transform3d( rotateX(0deg) )
+      z-index: 3
 
 
 

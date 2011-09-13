@@ -947,7 +947,7 @@ article {
   background-color: #e6e6e6;
   -webkit-perspective: 800;
   perspective: 800;
-  z-index: 1;
+  z-index: 10;
 }
 article:nth-of-type(1n+1) header {
   background-color: #12313a;
@@ -995,9 +995,10 @@ article header, article .body {
 }
 article header {
   background-color: #30829c;
-  position: absolute;
+  position: relative;
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
+  z-index: 2;
 }
 article header h1 {
   font-size: 6.667em;
@@ -1008,8 +1009,10 @@ article header h1 {
 }
 article .body {
   position: absolute;
+  top: 0;
   -webkit-transform: rotateX(180deg);
   transform: rotateX(180deg);
+  z-index: 1;
 }
 article .body figure {
   float: left;
@@ -1031,7 +1034,7 @@ article .body .text {
   column-rule: 1px solid #e6e6e6;
 }
 article:hover {
-  z-index: 2;
+  z-index: 20;
 }
 article:hover header {
   -webkit-transform: rotateX(-180deg);
@@ -1040,4 +1043,5 @@ article:hover header {
 article:hover .body {
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg);
+  z-index: 3;
 }
