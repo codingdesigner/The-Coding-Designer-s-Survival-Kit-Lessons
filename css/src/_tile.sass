@@ -21,30 +21,54 @@
   in The Kit. Don't write custom code here. Instead, import files that bring in
   default code from The Kit and files that add your custom code. The checklist below
   should help you put these files in order. 
-  
-  
-// Chapter II: IMPORTS THAT DON'T ADD CODE  
+
+
+// Chapter II: IMPORTS THAT SAVE TIME AND TROUBLE
+  --------------------------------------------------------------
+  From button styles to better link styles. Use the following imports to 
+  add tools that automate different tasks
+
+
+// ✔ 1. COMPASS PLUG-INS
+// Fancy Buttons
+// @import fancy-buttons
+// Sassy Buttons
+// @import sassybuttons
+
+// ✔ 2. ADD HELPER MIXINS AND FUNCTIONS
+  Over time I've collected or written a number of useful mixins. 
+@import common/functions/calculations
+@import common/functions/color
+@import common/mixins/helpers
+@import common/mixins/layout
+@import common/mixins/typography
+@import common/mixins/modular-scale
+@import common/mixins/ui
+@import common/mixins/sfx
+
+
+// Chapter III: IMPORTS THAT DON'T ADD CODE  
   --------------------------------------------------------------
   Start by importing a number of set up sass partials. The imported partials
   in the first few steps will not add any css to the compiled css. They 
   merely establish variables and helper mixins that will help later 
   in the process. 
-  
 
-// ✔ 1. VARIABLES
+
+// ✔ 3. VARIABLES
   Set up variables for future use.
   First we import the kit's default colors, which contains all the named 
   CSS values as variables. This makes quickly blocking our generic colors
   very easy. 
 @import common/variables/color_names
 @import common/variables/color_schemes
-@import naked/variables/colors
+@import tile/variables/colors
 // The Kit fonts partial establishes variables for simple clean typography
-@import naked/variables/fonts
+@import tile/variables/fonts
 // Import general starter variables from The Kit
-@import naked/variables/base
+@import tile/variables/base
 
-// ✔ 2. COMPASS MIXINS
+// ✔ 4. COMPASS MIXINS
   Add the compass tools you need
 // all of compass
 @import compass
@@ -56,13 +80,13 @@
 // @import compass/utilities
 
 
-// Chapter III: IMPORTS THAT DO ADD CODE
+// Chapter IV: IMPORTS THAT DO ADD CODE
   --------------------------------------------------------------
   These imported partials will start adding css when compiled. Starting with 
   your choice of CSS reset.
   
   
-// ✔ 3. PICK A CSS RESET
+// ✔ 5. PICK A CSS RESET
   There are subtle differences and approaches with the following CSS resets. 
   Eric Meyer is set by default, but the others are worth trying. 
 /* ------------------------------------------------------------------------------------
@@ -70,6 +94,7 @@
 /* CSS RESET  
 // Eric Meyer reset
 @import common/reset/_meyer-reset
+// @import common/reset/_normalize
 // html5 boilerplate reset
 // @import common/boilerplate/_boilerplate-reset
 // compass reset
@@ -77,40 +102,19 @@
 // susy reset
 // @import susy/reset
 
-// ✔ 4. CHOOSE A GRID FRAMEWORK
+// ✔ 6. CHOOSE A GRID FRAMEWORK
   Compass comes with Blueprint, and plenty of documentation
   (http://compass-style.org/reference/blueprint/)
 // Set some variables commonly used by most grid systems
-// @import naked/grids/_grids-all.sass
+@import tile/grids/_grids-all.sass
 // BLUEPRINT
-// @import naked/grids/_grids-blueprint.sass
+// @import tile/grids/_grids-blueprint.sass
 // alternately, import all of blueprint - use caution
 // @import blueprint
 // SUSY
   You may want to try Susy (http://susy.oddbird.net/), which 
   is designed to work closely with Compass.
-// @import naked/grids/_grids-susy.sass
-
-
-// Chapter IV: IMPORTS THAT SAVE TIME AND TROUBLE
-  --------------------------------------------------------------
-  From button styles to better link styles. Use the following imports to 
-  add tools that automate different tasks
-
-
-// ✔ 5. COMPASS PLUG-INS
-// Fancy Buttons
-// @import fancy-buttons
-// Sassy Buttons
-// @import sassybuttons
-  
-// ✔ 6. ADD HELPER MIXINS
-  Over time I've collected or written a number of useful mixins. 
-@import common/mixins/helpers
-@import common/mixins/layout
-@import common/mixins/typography
-// @import common/mixins/ui
-@import common/mixins/sfx
+@import tile/grids/_grids-susy.sass
 
 
 // Chapter V: IMPORTS THAT SET DEFAULTS FOR YOUR PROJECT
@@ -119,17 +123,17 @@
 
 // ✔ 7. DEFAULTS
   Set your overall site defaults. This covers mostly high level typographic items
-@import naked/defaults/_typography
-// @import naked/boilerplate/_boilerplate-setup
-// @import naked/boilerplate/_boilerplate-helpers
+@import tile/defaults/_typography
+// @import tile/boilerplate/_boilerplate-setup
+// @import tile/boilerplate/_boilerplate-helpers
 // Set defaults for most HTML elements
-@import naked/defaults/_elements
-@import naked/forms/_form-defaults
+@import tile/defaults/_elements
+// @import tile/forms/_form-defaults
 
 
 // ✔ 8. SPRITES
   import any sprites using Compass' automatic sprite generator
-// @import naked/sprites/_sprites
+// @import tile/sprites/_sprites
 
 
 
@@ -148,7 +152,7 @@
   These add in some of the default styles from your CMS. 
   They may be REMOVED IN PRODUCTION with caution
 // DRUPAL
-// @import naked/cms/drupal/drupal-helpers
+// @import tile/cms/drupal/drupal-helpers
 
 
 // Chapter VII: HERE IS WHERE YOU DO YOUR MAIN WORK
@@ -158,8 +162,8 @@
   
 // ✔ 11. STYLES FOR THIS SITE --------------------------------------------------
   Create your layout in a separate file from your design details
-@import naked/_layout.sass
-@import naked/_design.sass
+@import tile/_layout.sass
+@import tile/_design.sass
 
 
 // Chapter VIII: MAKE ADJUSTMENTS FOR DIFFERENT ENVIRONMENTS AND CAPABILITIES
@@ -169,19 +173,20 @@
 
 // ✔ 12. RESPONSIVE --------------------------------------------------
   Create layouts for a number of device-size breakpoints
-// @import naked/responsive/_responsive-susy.sass
-// @import naked/responsive/_responsive-blueprint.sass
+// @import tile/responsive/_responsive-susy.sass
+// @import tile/responsive/_responsive-blueprint.sass
+@import tile/responsive/_responsive-styletile.sass
 
 // ✔ 13. Modernizr & Browser Support -------------------------------------------
   Use modernizr (http://modernizr.com) to manage styles for less-capable devices
   Use IE classes on the <html> tag to manage classes for different IE browsers
-// @import naked/browser_adjustments/_modernizr.sass
-// @import naked/browser_adjustments/_ie.sass
+// @import tile/browser_adjustments/_modernizr.sass
+// @import tile/browser_adjustments/_ie.sass
 
 
 // ✔ 14. Print -------------------------------------------
   Add print styles via @media query rather than by it's own stylesheet
-// @import naked/print
+// @import tile/print
 
 
 
