@@ -93,7 +93,7 @@
   ------------------------------------------------------------------------------------
 /* CSS RESET  
 // Eric Meyer reset
-@import common/reset/_meyer-reset
+// @import common/reset/_meyer-reset
 // @import common/reset/_normalize
 // html5 boilerplate reset
 // @import common/boilerplate/_boilerplate-reset
@@ -106,9 +106,9 @@
   Compass comes with Blueprint, and plenty of documentation
   (http://compass-style.org/reference/blueprint/)
 // Set some variables commonly used by most grid systems
-@import basic/grids/_grids-all.sass
+// @import basic/grids/_grids-all.sass
 // BLUEPRINT
-@import basic/grids/_grids-blueprint.sass
+// @import basic/grids/_grids-blueprint.sass
 // alternately, import all of blueprint - use caution
 // @import blueprint
 // SUSY
@@ -123,12 +123,12 @@
 
 // ✔ 7. DEFAULTS
   Set your overall site defaults. This covers mostly high level typographic items
-@import basic/defaults/_typography
+// @import basic/defaults/_typography
 // @import basic/boilerplate/_boilerplate-setup
 // @import basic/boilerplate/_boilerplate-helpers
 // Set defaults for most HTML elements
-@import basic/defaults/_elements
-@import basic/forms/_form-defaults
+// @import basic/defaults/_elements
+// @import basic/forms/_form-defaults
 
 
 // ✔ 8. SPRITES
@@ -145,7 +145,7 @@
 // ✔ 9. Styles just for working in the Survival Kit
   REMOVE THESE IN PRODUCTION
   These are styles designed for use by The Kit
-@import common/survival_kit/_survival-kit
+// @import common/survival_kit/_survival-kit
 
 
 // ✔ 9. CMS-specific overrides and mixins
@@ -162,8 +162,8 @@
   
 // ✔ 11. STYLES FOR THIS SITE --------------------------------------------------
   Create your layout in a separate file from your design details
-@import basic/_layout.sass
-@import basic/_design.sass
+// @import basic/_layout.sass
+@import basic/_design.scss
 
 
 // Chapter VIII: MAKE ADJUSTMENTS FOR DIFFERENT ENVIRONMENTS AND CAPABILITIES
@@ -174,7 +174,7 @@
 // ✔ 12. RESPONSIVE --------------------------------------------------
   Create layouts for a number of device-size breakpoints
 // @import basic/responsive/_responsive-susy.sass
-@import basic/responsive/_responsive-blueprint.sass
+// @import basic/responsive/_responsive-blueprint.sass
 
 // ✔ 13. Modernizr & Browser Support -------------------------------------------
   Use modernizr (http://modernizr.com) to manage styles for less-capable devices

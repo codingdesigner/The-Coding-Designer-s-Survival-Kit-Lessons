@@ -1,0 +1,112 @@
+// Create the design for your site below
+/* SITE-WIDE DESIGN -------------------------------------------------------------- */
+
+
+
+@function wtf() {
+  $output: '';
+  $color: rgba($red, 0.5);
+  $end: 100;
+  @for $i from 1 through $end {
+     $output: $output + '#{$color} #{$i}px #{$i}px 2px';
+     @if $i < $end {
+       $output: $output + ', ';
+     }
+  }
+  @return unquote($output);
+}
+
+@function omg() {
+  $output: '';
+  $end: 25;
+  $radius: 40;
+  @for $i from 1 through $end {
+    $color: rgba($red, ($i / $end));
+    $position: 360 / $end * $i;
+    $cos: cos($position * (pi() / 180));
+    $x-position: $radius * $cos;
+    $sin: sin($position * (pi() / 180));
+    $y-position: $radius * $sin;
+     $output: $output + '#{$color} #{$x-position}px #{$y-position}px 2px';
+     @if $i < $end {
+       $output: $output + ', ';
+     }
+  }
+  @return unquote($output);
+}
+
+@function omgwtf() {
+  $output: '';
+  $end: 100;
+  $radius: 40;
+  @for $i from 1 through $end {
+    $color: rgba($red, ($i / $end));
+    $position: 360 / $end * $i;
+    $cos: cos($position * (pi() / 180));
+    $x-position: $radius * $cos;
+    $sin: sin($position * (pi() / 15));
+    $y-position: $radius * $sin;
+     $output: $output + '#{$color} #{$x-position}px #{$y-position}px 2px';
+     @if $i < $end {
+       $output: $output + ', ';
+     }
+  }
+  @return unquote($output);
+}
+
+@function lmao() {
+  $output: '';
+  $end: 5000;
+  
+  $x0: 6 / 10;
+  $y0: 4;
+  $z0: 6;
+  $h: 0.01;
+  $a: 10.0;
+  $b: 28.0;
+  $c: 8.0 / 3.0;
+  
+  @for $i from 0 through $end {
+    $x1: $x0 + $h * $a * ($y0 - $x0);
+    $y1: $y0 + $h * ($x0 * ($b - $z0) - $y0);
+    $z1: $z0 + $h * ($x0 * $y0 - $c * $z0);
+    
+    $xval: $x1 * -50;
+    $yval: $y1 * -20;
+    $spread: $z1 * .1;
+    
+    $color: rgba($red, ($i / $end));
+    $color: adjust-hue($color, $z1);
+/*    $color: rgba($red, ($z1 * .1));*/
+    
+    $output: $output + '#{$color} #{$xval}px #{$yval}px #{$spread}px';
+     @if $i < $end {
+       $output: $output + ', ';
+     }
+     
+     $x0: $x1;
+     $y0: $y1;
+     $z0: $z1;
+    
+  }
+  
+  @return unquote($output);
+}
+
+
+    
+h1 {
+  font-family: $font-mono;
+  color: $lightgray;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  letter-spacing: 84px;
+  line-height: 105px;
+/*  @include text-shadow(rgba($red, 0.5) 1px 1px 2px)*/
+/*  @include text-shadow(wtf());*/
+/*  @include text-shadow(omg());*/
+/*  @include box-shadow(omg());*/
+/*  @include text-shadow(omgwtf());*/
+/*  @include text-shadow(lmao());*/
+}
